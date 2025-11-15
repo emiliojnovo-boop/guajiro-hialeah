@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guajiro de Hialeah - Preservando la Décima Cubana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#92400e">
+    <link rel="icon" href="https://i.imgur.com/5x8LmN1.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/5x8LmN1.png">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Open Sans',sans-serif;line-height:1.6;color:#333;background:#fffbeb}
+        h1,h2,h3,h4{font-family:'Merriweather',serif}
+        .hero{background:linear-gradient(135deg,#92400e 0%,#d97706 50%,#f59e0b 100%);color:white;padding:80px 20px;text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'🌴';position:absolute;font-size:300px;opacity:.1;top:-50px;right:-50px;transform:rotate(-15deg)}
+        .hero-content{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+        .hero h1{font-size:3.5em;margin-bottom:10px;letter-spacing:3px;color:#fde68a;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
+        .hero .est{font-size:1.2em;color:#fcd34d;font-weight:bold;margin-bottom:20px;letter-spacing:2px}
+        .hero .tagline{font-size:1.3em;max-width:800px;margin:20px auto 40px;font-style:italic;color:#fef3c7;line-height:1.8}
+        .cta-button{display:inline-block;background:#fbbf24;color:#78350f;padding:18px 45px;font-size:1.2em;font-weight:bold;text-decoration:none;border-radius:50px;transition:all .3s;box-shadow:0 4px 15px rgba(0,0,0,.2)}
+        .cta-button:hover{background:#f59e0b;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
+        .section{padding:80px 20px;max-width:1200px;margin:0 auto}
+        .section h2{font-size:2.5em;color:#92400e;text-align:center;margin-bottom:50px;position:relative;padding-bottom:20px}
+        .section h2::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100px;height:4px;background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+        .tribute{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);padding:60px 40px;border-radius:20px;border:4px solid #f59e0b;box-shadow:0 10px 30px rgba(0,0,0,.1);margin:40px 0}
+        .tribute h3{font-size:2em;color:#92400e;margin-bottom:25px;text-align:center}
+        .tribute-content{display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:center}
+        .tribute-image img{width:100%;max-width:300px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,.1)}
+        .tribute-text{font-size:1.1em;line-height:1.9;color:#1f2937}
+        .tribute-quote{background:#fff8e1;border-left:5px solid #f59e0b;padding:20px 30px;margin:30px 0;font-style:italic;color:#78350f;text-align:center}
+        .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:50px}
+        .step{background:white;padding:35px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.08);border:2px solid #fde68a;text-align:center}
+        .step-number{width:60px;height:60px;background:linear-gradient(135deg,#f59e0b,#fbbf24);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8em;font-weight:bold;margin:0 auto 20px}
+        .youtube-helper{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:3px solid #f59e0b;border-radius:20px;padding:40px;margin:50px 0;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+        .youtube-input-section{background:white;padding:30px;border-radius:15px;max-width:800px;margin:0 auto;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .youtube-input-section input{width:100%;padding:18px;font-size:1.1em;border:2px solid #fbbf24;border-radius:10px;margin-bottom:20px;font-family:monospace}
+        .youtube-input-section button{width:100%;padding:18px;background:linear-gradient(135deg,#f59e0b,#fbbf24);color:white;border:none;border-radius:10px;font-size:1.2em;font-weight:bold;cursor:pointer}
+        .helper-result{margin-top:25px;padding:20px;background:#fef3c7;border-left:5px solid #f59e0b;border-radius:8px;display:none}
+        .helper-result.show{display:block}
+        .helper-result a{color:#2563eb;font-weight:bold}
+        @media (max-width:768px){.hero h1{font-size:2.5em}.tribute-content{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-content">
+        <div style="font-size:4em;margin-bottom:20px;">🌴</div>
+        <h1>Guajiro de Hialeah</h1>
+        <div class="est">EST 1936</div>
+        <p class="tagline">Un oído artificial que captura la magia de las décimas para que nunca se olviden</p>
+        <a href="#tool" class="cta-button">Usar la Herramienta</a>
+    </div>
+</section>
+
+<section class="section" id="tool">
+    <h2>Preservando la Tradición Cubana</h2>
+    <div class="tribute">
+        <h3>En Honor a Calixto González</h3>
+        <div class="tribute-content">
+            <div class="tribute-image">
+                <img src="https://i.imgur.com/8Kj9LmP.png" alt="Calixto González">
+            </div>
+            <div class="tribute-text">
+                <p><strong>Calixto González</strong> (1936-2022) fue un <em>repentista</em> cubano que llevó la décima a Hialeah, Miami.</p>
+                <div class="tribute-quote">"Una décima sin oyente se desvanece como el humo del fogón; con un archivo digital, perdura para siempre."</div>
+                <p>Este sitio es un homenaje y una herramienta para preservar cada verso.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="steps">
+        <div class="step"><div class="step-number">1</div><h3>Pega el video</h3><p>Copia la URL de YouTube</p></div>
+        <div class="step"><div class="step-number">2</div><h3>Obtén transcripción</h3><p>Descarga subtítulos o texto completo</p></div>
+        <div class="step"><div class="step-number">3</div><h3>Guarda la décima</h3><p>Edita y archiva en PDF o texto</p></div>
+    </div>
+
+    <div class="youtube-helper">
+        <h3>Helper de YouTube</h3>
+        <div class="youtube-input-section">
+            <input type="text" id="youtubeUrl" placeholder="Pega aquí la URL de YouTube… (ej: https://youtu.be/3tmd-ClpJxA)">
+            <button onclick="handleYoutubeUrl()">Extraer enlaces</button>
+            <div id="helperResult" class="helper-result">
+                <p><strong>Video:</strong> <a id="videoLink" target="_blank">Abrir</a></p>
+                <p><strong>Subtítulos:</strong> <a id="downsubLink" target="_blank">DownSub</a></p>
+                <p><strong>Transcripción:</strong> <a id="transcriptLink" target="_blank">Texto completo</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer style="background:#78350f;color:#fde68a;padding:40px;text-align:center;">
+    <p>© 2025 Guajiro de Hialeah – Preservando la décima cubana</p>
+</footer>
+
+<script>
+function handleYoutubeUrl() {
+    const url = document.getElementById('youtubeUrl').value.trim();
+    if (!url) return alert('Pega una URL');
+    const regex = /(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/;
+    const match = url.match(regex);
+    if (!match) return alert('URL no válida');
+    const id = match[1];
+    document.getElementById('videoLink').href = url;
+    document.getElementById('downsubLink').href = `https://downsub.com/?url=${encodeURIComponent(url)}`;
+    document.getElementById('transcriptLink').href = `https://youtubetranscript.com/?v=${id}`;
+    document.getElementById('helperResult').classList.add('show');
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const input = document.getElementById('youtubeUrl');
+    if (input) input.addEventListener('keypress', e => { if (e.key === 'Enter') handleYoutubeUrl(); });
+});
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+</script>
+</body>
+</html>
