@@ -1,13 +1,64 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guajiro de Hialeah</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+import React, { useState } from 'react';
+import { FileText, Copy, Download, Loader2, Music, FileDown, Info, X, Globe } from 'lucide-react';
+import Header from './components/Header';
+import AboutModal from './components/AboutModal';
+import InputSection from './components/InputSection';
+import ResultSection from './components/ResultSection';
+import InfoSection from './components/InfoSection';
+import useTranscription from './hooks/useTranscription';
+
+export default function GuajiroDeHialeah() {
+  const [input, setInput] = useState('');
+  const [showAbout, setShowAbout] = useState(false);
+  const [showExportMenu, setShowExportMenu] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const {
+    result,
+    loading,
+    error,
+    transcribe,
+    copyToClipboard,
+    downloadAsText,
+    downloadAsWord,
+    downloadAsPDF
+  } = useTranscription(input);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
+      <Header onAbout={() => setShowAbout(true)} />
+
+      {showAbout && <AboutModal onClose={() => setShowAbout(false)} />}
+
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        <div className="grid md:grid-cols-2 gap-8">
+          <InputSection
+            input={input}
+            setInput={setInput}
+            loading={loading}
+            error={error}
+            onTranscribe={transcribe}
+          />
+
+          <ResultSection
+            result={result}
+            loading={loading}
+            copied={copied}
+            showExportMenu={showExportMenu}
+            setShowExportMenu={setShowExportMenu}
+            onCopy={() => {
+              copyToClipboard();
+              setCopied(true);
+              setTimeout(() => setCopied(false), 2000);
+            }}
+            onDownloadText={downloadAsText}
+            onDownloadWord={downloadAsWord}
+            onDownloadPDF={downloadAsPDF}
+          />
+        </div>
+
+        <InfoSection />
+      </div>
+    </div>
+  );
+}
